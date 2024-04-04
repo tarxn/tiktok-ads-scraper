@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Selenium & Chrome template
 
 A template example built with Selenium and a headless Chrome browser to scrape a website and save the results to storage. The URL of the web page is passed in via input, which is defined by the [input schema](https://docs.apify.com/platform/actors/development/input-schema). The template uses the [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) to load and process the page. Enqueued URLs are stored in the default [request queue](https://docs.apify.com/sdk/python/reference/class/RequestQueue). The data are then stored in the default [dataset](https://docs.apify.com/platform/storage/dataset) where you can easily access them.
@@ -79,3 +80,7 @@ To learn more about Apify and Actors, take a look at the following resources:
 - [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
 - [Apify Platform documentation](https://docs.apify.com/platform)
 - [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
+=======
+# tiktok_ads_scrapper
+
+>>>>>>> 11c07dcc5306a2472f20fc53292b7e870d74c500
