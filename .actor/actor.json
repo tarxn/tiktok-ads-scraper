@@ -1,0 +1,87 @@
+{
+  "actorSpecification": 1,
+  "name": "TiktokAdsScrapper",
+  "title": "TikTok Ads Scraper with Selenium",
+  "description": "Scrapes TikTok ads information and displays the data.",
+  "version": "0.0",
+  "meta": {
+    "templateId": "python-selenium"
+  },
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "fields" : {},
+      "views": {
+        "tiktok-ads-data": {
+          "title": "tiktok-ads-data",
+          "transformation": {
+            "fields": [
+              "ad_id",
+              "ad_advertiser",
+              "first_shown",
+              "last_shown",
+              "unique_user_views",
+              "target_audience",
+              "country_list",
+              "gender",
+              "age",
+              "additional_parameters",
+              "video_link"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "ad_id": {
+                "label": "Ad ID",
+                "format": "text"
+              },
+              "ad_advertiser": {
+                "label": "Advertiser",
+                "format": "text"
+              },
+              "first_shown": {
+                "label": "First Shown",
+                "format": "text"
+              },
+              "last_shown": {
+                "label": "Last Shown",
+                "format": "text"
+              },
+              "unique_user_views": {
+                "label": "Unique User Views",
+                "format": "text"
+              },
+              "target_audience": {
+                "label": "Target Audience",
+                "format": "text"
+              },
+              "country_list": {
+                "label": "Country List",
+                "format": "text"
+              },
+              "gender": {
+                "label": "Gender Distribution",
+                "format": "text"
+              },
+              "age": {
+                "label": "Age Distribution",
+                "format": "text"
+              },
+              "additional_parameters": {
+                "label": "Additional Parameters",
+                "format": "text"
+              },
+              "video_link": {
+                "label": "Video Link",
+                "format": "link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
