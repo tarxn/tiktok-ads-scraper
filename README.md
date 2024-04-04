@@ -1,85 +1,69 @@
-## Selenium & Chrome template
+# TikTok Ads Scraper
 
-A template example built with Selenium and a headless Chrome browser to scrape a website and save the results to storage. The URL of the web page is passed in via input, which is defined by the [input schema](https://docs.apify.com/platform/actors/development/input-schema). The template uses the [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/) to load and process the page. Enqueued URLs are stored in the default [request queue](https://docs.apify.com/sdk/python/reference/class/RequestQueue). The data are then stored in the default [dataset](https://docs.apify.com/platform/storage/dataset) where you can easily access them.
+## Description
+This TikTok Ads Scraper is designed to efficiently gather advertisements information from TikTok, utilizing Selenium for web scraping and BeautifulSoup for parsing the scraped HTML data. It captures various details such as ad ID, advertiser information, first and last shown dates, unique user views, target audience demographics, and more.
 
-## Included features
+## Sample Output
 
-- **[Apify SDK](https://docs.apify.com/sdk/python/)** for Python - a toolkit for building Apify [Actors](https://apify.com/actors) and scrapers in Python
-- **[Input schema](https://docs.apify.com/platform/actors/development/input-schema)** - define and easily validate a schema for your Actor's input
-- **[Request queue](https://docs.apify.com/sdk/python/docs/concepts/storages#working-with-request-queues)** - queues into which you can put the URLs you want to scrape
-- **[Dataset](https://docs.apify.com/sdk/python/docs/concepts/storages#working-with-datasets)** - store structured data where each object stored has the same attributes
-- **[Selenium](https://pypi.org/project/selenium/)** - a browser automation library
+Refer to a sample output dataset. This dataset specifically captures advertisements related to the keyword "fashion" within the UK over the past 7 days. Access the dataset [here](https://github.com/tarxn/tiktok-ads-scrapper/blob/main/output_data/tiktok_ads_data_UK_last7days_fashion.csv).
 
-## How it works
+## Explore On Your Own
 
-This code is a Python script that uses Selenium to scrape web pages and extract data from them. Here's a brief overview of how it works:
+ Get started by accessing the notebook [here](https://colab.research.google.com/drive/1y4CYFRUGo_OVbwFcb86oH7nlBTDSfL43?usp=sharing).
 
-- The script reads the input data from the Actor instance, which is expected to contain a `start_urls` key with a list of URLs to scrape and a `max_depth` key with the maximum depth of nested links to follow.
-- The script enqueues the starting URLs in the default request queue and sets their depth to 1.
-- The script processes the requests in the queue one by one, fetching the URL using requests and parsing it using Selenium.
-- If the depth of the current request is less than the maximum depth, the script looks for nested links in the page and enqueues their targets in the request queue with an incremented depth.
-- The script extracts the desired data from the page (in this case, titles of each page) and pushes them to the default dataset using the `push_data` method of the Actor instance.
-- The script catches any exceptions that occur during the [web scraping](https://apify.com/web-scraping) process and logs an error message using the `Actor.log.exception` method.
+------------------------------------------------------------------------------------------------------------------------------------------
 
-## Resources
+## Features
+- **Selenium WebDriver**: Automates web browser interaction to scrape dynamic content.
+- **BeautifulSoup**: Parses HTML content to extract ad details.
+- **Asyncio**: Manages asynchronous tasks for improved performance.
+- **Apify SDK Integration**: Stores and manages scraped data on the Apify platform.
 
-- [Selenium controlled Chrome example](https://apify.com/apify/example-selenium)
-- [Selenium Grid: what it is and how to set it up](https://blog.apify.com/selenium-grid-what-it-is-and-how-to-set-it-up/)
-- [Web scraping with Selenium and Python](https://blog.apify.com/web-scraping-with-selenium-and-python/)
-- [Cypress vs. Selenium for web testing](https://blog.apify.com/cypress-vs-selenium/)
-- [Python tutorials in Academy](https://docs.apify.com/academy/python)
-- [Video guide on getting scraped data using Apify API](https://www.youtube.com/watch?v=ViYYDHSBAKM)
-- A short guide on how to build web scrapers using code templates:
+## Requirements
+- Python 3.6+
+- Selenium
+- BeautifulSoup4
+- Apify Python Client
+- A WebDriver (e.g., ChromeDriver) compatible with your browser version
 
-[web scraper template](https://www.youtube.com/watch?v=u-i-Korzf8w)
+## Setup and Installation
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/tiktok-ads-scraper.git
+   cd tiktok-ads-scraper
+   ```
 
+2. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Getting started
+3. **WebDriver Setup:**
+   - Download the WebDriver for your browser (e.g., ChromeDriver for Google Chrome) and place it in a known directory.
+   - Ensure the path to the WebDriver is correctly set in the script or added to your system's PATH variable.
 
-For complete information [see this article](https://docs.apify.com/platform/actors/development#build-actor-at-apify-console). In short, you will:
+4. **Apify Setup:**
+   - Create an account on [Apify](https://apify.com) and obtain your API token.
+   - Update the `actor.json` file with your project details and Apify token.
 
-1. Build the Actor
-2. Run the Actor
+## Usage
+Update the `input_schema.json` with the start URLs and any other parameters you wish to customize for scraping. Then, run the scraper using:
 
-## Pull the Actor for local development
+```bash
+python main.py
+```
 
-If you would like to develop locally, you can pull the existing Actor from Apify console using Apify CLI:
+## Data Output
+Scraped data is stored in the Apify dataset and can be accessed through the Apify platform. You can configure the output format (e.g., JSON, CSV) in the `actor.json` file.
 
-1. Install `apify-cli`
+## Contributing
+Contributions to improve the TikTok Ads Scraper are welcome. Please follow these steps to contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
 
-    **Using Homebrew**
+---
 
-    ```bash
-    brew install apify-cli
-    ```
-
-    **Using NPM**
-
-    ```bash
-    npm -g install apify-cli
-    ```
-
-2. Pull the Actor by its unique `<ActorId>`, which is one of the following:
-    - unique name of the Actor to pull (e.g. "apify/hello-world")
-    - or ID of the Actor to pull (e.g. "E2jjCZBezvAZnX8Rb")
-
-    You can find both by clicking on the Actor title at the top of the page, which will open a modal containing both Actor unique name and Actor ID.
-
-    This command will copy the Actor into the current directory on your local machine.
-
-    ```bash
-    apify pull <ActorId>
-    ```
-
-## Documentation reference
-
-To learn more about Apify and Actors, take a look at the following resources:
-
-- [Apify SDK for JavaScript documentation](https://docs.apify.com/sdk/js)
-- [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
-- [Apify Platform documentation](https://docs.apify.com/platform)
-- [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
-=======
-# tiktok_ads_scrapper
-
->>>>>>> 11c07dcc5306a2472f20fc53292b7e870d74c500
+Remember to replace placeholders (like `https://github.com/your-username/tiktok-ads-scraper.git`) with actual links or information related to your project. This `README.md` provides a clear overview of your project and guides users through installation, setup, and usage, making your project more accessible and user-friendly.
