@@ -7,7 +7,7 @@ This TikTok Ads Scraper is designed to efficiently gather advertisements informa
 
 This dataset specifically captures advertisements related to the keyword "fashion" within the UK over the past 7 days. Access the dataset [here](https://github.com/tarxn/tiktok-ads-scrapper/blob/main/output_data/tiktok_ads_data_UK_last7days_fashion.csv).
 
-## Try out yourself
+## Try out for yourself
 
 https://colab.research.google.com/drive/1y4CYFRUGo_OVbwFcb86oH7nlBTDSfL43?usp=sharing
 
@@ -66,4 +66,3 @@ Contributions to improve the TikTok Ads Scraper are welcome. Please follow these
 
 ---
 
-Remember to replace placeholders (like `https://github.com/your-username/tiktok-ads-scraper.git`) with actual links or information related to your project. This `README.md` provides a clear overview of your project and guides users through installation, setup, and usage, making your project more accessible and user-friendly.
