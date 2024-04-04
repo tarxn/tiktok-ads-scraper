@@ -5,11 +5,11 @@ This TikTok Ads Scraper is designed to efficiently gather advertisements informa
 
 ## Sample Output
 
-Refer to a sample output dataset. This dataset specifically captures advertisements related to the keyword "fashion" within the UK over the past 7 days. Access the dataset [here](https://github.com/tarxn/tiktok-ads-scrapper/blob/main/output_data/tiktok_ads_data_UK_last7days_fashion.csv).
+This dataset specifically captures advertisements related to the keyword "fashion" within the UK over the past 7 days. Access the dataset [here](https://github.com/tarxn/tiktok-ads-scrapper/blob/main/output_data/tiktok_ads_data_UK_last7days_fashion.csv).
 
-## Explore On Your Own
+## Try out yourself
 
- Get started by accessing the notebook [here](https://colab.research.google.com/drive/1y4CYFRUGo_OVbwFcb86oH7nlBTDSfL43?usp=sharing).
+https://colab.research.google.com/drive/1y4CYFRUGo_OVbwFcb86oH7nlBTDSfL43?usp=sharing
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
